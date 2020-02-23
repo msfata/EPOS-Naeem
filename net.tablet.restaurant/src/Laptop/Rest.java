@@ -687,6 +687,8 @@ public class Rest extends JFrame {
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				}finally {
+					new FileDelete();
 				}
 				if ((Rest.this.tfCredit.getText().isEmpty()) && (!Rest.this.tfDebit.getText().isEmpty())) {
 					new MessageOK("Please Pay First !").setVisible(true);
