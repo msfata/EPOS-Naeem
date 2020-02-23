@@ -14,7 +14,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-
+@SuppressWarnings("all")
 public class ScreenShot {
 	public static String path;
 	static int m = 3700;

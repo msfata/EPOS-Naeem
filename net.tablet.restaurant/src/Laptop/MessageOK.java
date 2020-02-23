@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
-
+@SuppressWarnings("all")
 public class MessageOK extends JFrame {
 
 	/**

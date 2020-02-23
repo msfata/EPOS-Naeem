@@ -54,7 +54,7 @@ import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-
+@SuppressWarnings("all")
 public class Rest extends JFrame {
 	private boolean pizzaOrdered;
 	private static final long serialVersionUID = 1L;
@@ -2644,6 +2644,7 @@ public class Rest extends JFrame {
 					} else {
 						ap = "PM";
 					}
+					@SuppressWarnings("unused")
 					String time = hour + " : " + min + " : " + sec + " " + ap;
 
 					Rest.TimerDisplay.setText("" + sec);

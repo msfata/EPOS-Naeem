@@ -19,7 +19,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import com.toedter.calendar.JCalendar;
-
+@SuppressWarnings("all")
 public class SearchFrame extends JFrame {
 
 	/**

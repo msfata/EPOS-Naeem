@@ -26,7 +26,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
-
+@SuppressWarnings("all")
 public class UUID {
 	private static Statement stmt;
 	private static java.sql.Connection con;

@@ -1,6 +1,5 @@
 package Laptop;
 
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -21,6 +20,7 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 
+@SuppressWarnings("all")
 public class MessageYesNoReset extends JFrame {
 
 	/**
@@ -54,7 +54,7 @@ public class MessageYesNoReset extends JFrame {
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		setBounds(150, 170, 382, 155);
-		setBounds(850, 170, 382, 155);//right hand table tablet
+		setBounds(850, 170, 382, 155);// right hand table tablet
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBackground(Color.WHITE);
@@ -77,7 +77,6 @@ public class MessageYesNoReset extends JFrame {
 			public void keyPressed(KeyEvent e) {
 
 				UUID.dropTable(UUID.tableName);
-
 
 			}
 		});

@@ -2,6 +2,7 @@ package Laptop;
 
 
 import java.awt.Color;
+
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.GradientPaint;
@@ -17,6 +18,7 @@ import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import javax.swing.text.View;
+@SuppressWarnings("all")
 public class CustomTabbedPaneUI extends BasicTabbedPaneUI {
 
 	private Color selectColor;
