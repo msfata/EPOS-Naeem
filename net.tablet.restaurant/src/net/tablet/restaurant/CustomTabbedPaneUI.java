@@ -23,7 +23,7 @@ public class CustomTabbedPaneUI extends BasicTabbedPaneUI {
 	private Color deSelectColor;
 	private int inclTab = 4;
 //	private int anchoFocoV = inclTab;
-	private int anchoFocoH = 20;//size of buttons
+	private int anchoFocoH = 40;// size of buttons
 	private int anchoCarpetas = 18;
 	private Polygon shape;
 

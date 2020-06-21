@@ -36,7 +36,7 @@ public class UUID {//com.restaurant.default.package this is for tablet
 	private static String userPassword;
 	static String computername;
 	private static String zero = "zero";
-	static String tableName = "test786";
+	static String tableName = "test78611";
 	public static String Password;
 	private static int counter;
 	private static JTextField textField;
@@ -53,7 +53,8 @@ public class UUID {//com.restaurant.default.package this is for tablet
 //			dropTable(tableName);//MSFATA
 			select("SELECT * FROM " + tableName);
 		} catch (UnknownHostException | SQLException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+		
 		}
 	}
 
@@ -237,6 +238,7 @@ public class UUID {//com.restaurant.default.package this is for tablet
 					return;
 				try {
 					textField.setText((String) t.getTransferData(DataFlavor.stringFlavor));
+					System.out.println(textField.getText()+240);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

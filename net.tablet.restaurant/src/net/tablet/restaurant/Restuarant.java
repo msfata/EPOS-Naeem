@@ -3,6 +3,8 @@ package net.tablet.restaurant;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 //import java.awt.GraphicsDevice;
 //import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
@@ -126,14 +128,14 @@ public class Restuarant extends JFrame {
 		} catch (Exception e) {
 //			e.getMessage();
 		}
-//		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-//		int width = gd.getDisplayMode().getWidth();
-//		int height = gd.getDisplayMode().getHeight();
-		int width = 1280;
-		int height = 800;
+		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+		int width = gd.getDisplayMode().getWidth();
+		int height = gd.getDisplayMode().getHeight();
+//		int width = 1280;
+//		int height = 800;
+		setBounds(0, 0, width, height);
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, width, height);
 		contentPane = new JPanel();
 		contentPane.addMouseListener(new MouseAdapter() {
 			@Override
@@ -153,14 +155,14 @@ public class Restuarant extends JFrame {
 		contentPane.setBackground(new Color(255, 255, 255));
 
 		contentPane.setBorder(new CompoundBorder(new LineBorder(new Color(255, 255, 255), 6),
-				new LineBorder(new Color(51, 102, 153), 3)));
+				new LineBorder(new Color(51, 102, 153), 0)));
 		setUndecorated(true);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panelExit = new JPanel();
 		panelExit.setBackground(new Color(255, 255, 255));
-		panelExit.setBounds(1003, 401, 271, 390);
+		panelExit.setBounds(1003, 384, 271, 325);
 		panelExit.setBorder(null);
 		contentPane.add(panelExit);
 
@@ -549,7 +551,7 @@ public class Restuarant extends JFrame {
 			}
 		});
 		calCulationscrollPane.setViewportBorder(null);
-		calCulationscrollPane.setBounds(720, 76, 554, 322);
+		calCulationscrollPane.setBounds(720, 51, 554, 334);
 		contentPane.add(calCulationscrollPane);
 		calCulationscrollPane.setBorder(new LineBorder(Color.WHITE));
 
@@ -561,7 +563,7 @@ public class Restuarant extends JFrame {
 		calculationTable.setForeground(Color.BLACK);
 		calculationTable.setRowHeight(18);
 		calculationTable.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		calculationTable.setBorder(null);
+		calculationTable.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		calculationTable.setBackground(Color.WHITE);
 		calculationTable.setModel(
 				new DefaultTableModel(new Object[][] {}, new String[] { "NAME", "PORTION", "PRICE", "TOTAL" }));
@@ -618,7 +620,6 @@ public class Restuarant extends JFrame {
 				}
 			}
 		});
-
 		taxSidePanel.setLayout(new GridLayout(0, 1, 0, 0));
 		btnTax.setIcon(new ImageIcon(Restuarant.class.getResource("/buttons/taxButton.png")));
 		btnTax.setBorder(new TitledBorder(null, "OFF", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
@@ -704,7 +705,7 @@ public class Restuarant extends JFrame {
 
 		JPanel panelNumbers = new JPanel();
 		panelNumbers.setBorder(null);
-		panelNumbers.setBounds(722, 482, 286, 312);
+		panelNumbers.setBounds(722, 427, 271, 282);
 		contentPane.add(panelNumbers);
 		panelNumbers.setBackground(Color.WHITE);
 		panelNumbers.setLayout(new GridLayout(0, 3, 0, 0));
@@ -1020,7 +1021,7 @@ public class Restuarant extends JFrame {
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		tabbedPane.setBackground(Color.WHITE);
 		tabbedPane.setBorder(null);
-		tabbedPane.setBounds(6, 131, 713, 663);
+		tabbedPane.setBounds(6, 131, 713, 578);
 
 		tabbedPane.setFont(new Font("Monaco", Font.PLAIN, 14));
 
@@ -2125,17 +2126,6 @@ public class Restuarant extends JFrame {
 		pizzaScroolPane.setRowHeaderView(pizzaSidePanel);
 		pizzaSidePanel.setLayout(new GridLayout(0, 1, 0, 0));
 
-		cbRe = new JCheckBox("");
-		cbRe.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		cbRe.setBackground(Color.BLACK);
-		buttonGroup.add(cbRe);
-		cbRe.setVisible(false);
-		pizzaSidePanel.add(cbRe);
-
 		cbSmall = new JCheckBox("SM");
 		cbSmall.addActionListener(new ActionListener() {
 			@Override
@@ -2167,6 +2157,20 @@ public class Restuarant extends JFrame {
 		cbLarge.setVerticalAlignment(SwingConstants.TOP);
 		cbLarge.setBackground(new Color(153, 204, 0));
 		pizzaSidePanel.add(cbLarge);
+		
+				cbRe = new JCheckBox("");
+				cbRe.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+					}
+				});
+				cbRe.setBackground(Color.BLACK);
+				buttonGroup.add(cbRe);
+				cbRe.setVisible(false);
+				pizzaSidePanel.add(cbRe);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		pizzaSidePanel.add(btnNewButton_1);
 
 		JPanel panelOffer = new JPanel();
 		tabbedPane.addTab("offers", null, panelOffer, null);
@@ -2218,7 +2222,7 @@ public class Restuarant extends JFrame {
 
 		JPanel calclationPanel = new JPanel();
 		calclationPanel.setBackground(Color.WHITE);
-		calclationPanel.setBounds(721, 6, 553, 70);
+		calclationPanel.setBounds(721, 6, 553, 43);
 		contentPane.add(calclationPanel);
 		calclationPanel.setLayout(new GridLayout(1, 0, 0, 0));
 
@@ -2243,7 +2247,7 @@ public class Restuarant extends JFrame {
 
 		tfCredit.setEditable(false);
 		tfCredit.setForeground(new Color(0, 128, 0));
-		tfCredit.setFont(new Font("DS-Digital", Font.PLAIN, 20));
+		tfCredit.setFont(new Font("Dialog", Font.PLAIN, 16));
 		tfCredit.setBorder(new TitledBorder(new LineBorder(new Color(230, 230, 250), 5), "CREDIT", TitledBorder.CENTER,
 				TitledBorder.TOP, null, new Color(0, 0, 0)));
 
@@ -2256,7 +2260,7 @@ public class Restuarant extends JFrame {
 		tfDebit.setBorder(new TitledBorder(new LineBorder(new Color(230, 230, 250), 5), "DEBIT", TitledBorder.CENTER,
 				TitledBorder.TOP, null, new Color(0, 0, 0)));
 		tfDebit.setHorizontalAlignment(SwingConstants.CENTER);
-		tfDebit.setFont(new Font("DS-Digital", Font.PLAIN, 20));
+		tfDebit.setFont(new Font("Dialog", Font.PLAIN, 16));
 		tfDebit.setBackground(new Color(255, 255, 255));
 
 		tfTax = new JTextField();
@@ -2268,7 +2272,7 @@ public class Restuarant extends JFrame {
 		tfTax.setText("20%");
 		tfTax.setHorizontalAlignment(SwingConstants.CENTER);
 		tfTax.setForeground(new Color(0, 0, 0));
-		tfTax.setFont(new Font("DS-Digital", Font.PLAIN, 20));
+		tfTax.setFont(new Font("Dialog", Font.PLAIN, 16));
 		tfTax.setEditable(false);
 		tfTax.setBorder(new TitledBorder(new LineBorder(new Color(230, 230, 250), 5), "VAT", TitledBorder.CENTER,
 				TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -2349,7 +2353,7 @@ public class Restuarant extends JFrame {
 		JPanel panelRecipt = new JPanel();
 		panelRecipt.setBorder(null);
 		panelRecipt.setBackground(Color.WHITE);
-		panelRecipt.setBounds(720, 399, 288, 81);
+		panelRecipt.setBounds(720, 392, 273, 29);
 		contentPane.add(panelRecipt);
 
 		JButton btnRecipt = new JButton("");
